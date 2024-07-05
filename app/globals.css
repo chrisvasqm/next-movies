@@ -25,10 +25,3 @@ h2 {
 h3 {
   font-size: 3rem;
 }
-
-/* Navbar */
-
-nav {
-  box-shadow: 0 0 5px 1px;
-  padding: 0 1rem;
-}
