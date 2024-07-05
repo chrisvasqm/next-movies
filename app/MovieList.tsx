@@ -8,7 +8,7 @@ interface Props {
 
 function MovieList({ movies }: Props) {
   return (
-    <Grid columns={{ initial: '1', sm: '2', md: '3' }} gap='3' px="10">
+    <Grid columns={{ initial: '1', xs: '2', sm: '2', md: '3', lg: '4' }} gap='3'>
       {movies.map(movie => <MovieCard key={movie.id} movie={movie} />)}
     </Grid>
   )
