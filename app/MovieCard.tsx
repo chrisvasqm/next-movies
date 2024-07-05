@@ -10,9 +10,9 @@ function MovieCard({ movie }: Props) {
   return (
     <Card>
       <Flex direction='column'>
-        <Text>{movie.title}</Text>
+        <Text size={'6'}>{movie.title}</Text>
         <Text>{movie.description}</Text>
-        <Text>${movie.price}</Text>
+        <Text size={'5'} mt={'3'}>${movie.price}</Text>
       </Flex>
     </Card>
   )
