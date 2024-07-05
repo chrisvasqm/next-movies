@@ -8,7 +8,9 @@ export async function GET(_request: NextRequest, _response: NextResponse) {
     { id: 3, title: 'Star Wars', description: 'A long description...', price: 9.99 },
     { id: 4, title: 'Step Up 4', description: 'A long description...', price: 4.99 },
     { id: 5, title: 'Cars', description: 'A long description...', price: 9.99 },
-    { id: 6, title: 'Moana', description: 'A long description...', price: 4.99 }
+    { id: 6, title: 'Moana', description: 'A long description...', price: 4.99 },
+    { id: 7, title: 'Spiderman', description: 'A long description...', price: 9.99 },
+    { id: 8, title: 'Avengers', description: 'A long description...', price: 4.99 }
   ]
 
   return NextResponse.json(movies);
