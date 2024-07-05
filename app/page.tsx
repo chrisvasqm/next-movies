@@ -12,7 +12,7 @@ const movies = [
 
 export default function Home() {
   return (
-    <Box style={{ paddingTop: 10 }}>
+    <Box style={{ padding: 10 }}>
       <MovieList movies={movies} />
     </Box>
   );
