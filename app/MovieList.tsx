@@ -1,5 +1,5 @@
 import { Grid } from '@radix-ui/themes'
-import MovieCard from './_components/MovieCard'
+import MovieCard from './MovieCard'
 import Movie from './_models/Movie'
 
 interface Props {

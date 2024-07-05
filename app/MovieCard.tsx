@@ -1,5 +1,5 @@
 import React from 'react'
-import Movie from '../_models/Movie'
+import Movie from './_models/Movie'
 import { Card, Flex, Text } from '@radix-ui/themes'
 
 interface Props {
