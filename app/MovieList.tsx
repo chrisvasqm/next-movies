@@ -1,30 +1,30 @@
 'use client'
 
-import { Grid } from '@radix-ui/themes';
-import { useEffect, useState } from 'react';
-import MovieCard from './MovieCard';
-import Movie from './_models/Movie';
+import { Grid } from '@radix-ui/themes'
+import { useQuery } from 'react-query'
+import MovieCard from './MovieCard'
+import Movie from './_models/Movie'
+import ms from 'ms'
+
+const fetchMovies = async () => {
+  const response = await fetch('/api/movies')
+  return await response.json()
+}
 
 function MovieList() {
-  const [movies, setMovies] = useState<Movie[]>([]);
-  const [isLoading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const fetchMovies = async () => {
-      const response = await fetch('/api/movies')
-      const movies = await response.json()
-      setLoading(false)
-      setMovies(movies)
-    }
-
-    fetchMovies()
-  }, []);
+  const { data: movies, isLoading, error } = useQuery<Movie[], Error>({
+    queryKey: ['movies'],
+    queryFn: fetchMovies,
+    staleTime: ms('5s')
+  })
 
   if (isLoading) return <p>Loading...</p>
 
+  if (error) return <p>{error.message}</p>
+
   return (
     <>
-      {movies.length === 0 && <p>Catalog is empty</p>}
+      {movies?.length === 0 && <p>Catalog is empty</p>}
 
       {movies &&
         <Grid columns={{ initial: '1', xs: '2', sm: '2', md: '3', lg: '4' }} gap='3'>
